@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CalculadoraPekus.Models.Calculadora>
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+
+        <h1>HISTÓRICO</h1>
+        <br />
+            <br />
+
+
+            <br />
+            <table class="table">
+                <thead>
+                    <tr>
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.pressaoid)
+                    </th>*@
+                        @*<th>
+                        @Html.DisplayNameFor(model => model.iddatalogger)
+                    </th>*@
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.pressao)*@
+                            Valor 1
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.pressaoentrada)*@
+                            Operação
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.pressaosaida)*@
+                            Valor 2
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.datahora)*@
+                            Resultado
+                        </th>
+                        <th>
+                            Data/Hora
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count() != 0)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idconta)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.n1)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Operacao)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.n2)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.total)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.datahora)
+                                </td>
+                                
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        
+</body>
+</html>

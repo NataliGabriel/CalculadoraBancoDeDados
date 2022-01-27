@@ -1,0 +1,92 @@
+﻿
+@model string
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="field pixel">
+    <h2>Calculadora:</h2>
+
+</div>
+<br />
+<br />
+<br />
+
+<form asp-action="Calcular">
+
+
+    <div class="field pixel">
+        <label for="n1">Digite o primeiro valor</label>
+        <input name="n1" type="text" value="@ViewBag.n1">
+    </div>
+
+    <div class="field pixel">
+        <label for="pixel">selecione a operação: </label>
+
+        <select name="Operacao" id="Operacao">
+
+            <option>somar</option>
+            <option>subtrair</option>
+            <option>dividir</option>
+            <option>multiplicar</option>
+        </select>
+
+    </div>
+
+    <div class="field pixel">
+        <label for="n2">Digite o segundo valor</label>
+        <input name="n2" type="text" value="@ViewBag.n2">
+    </div>
+
+    @*<div class="field pixel">
+            <label for="vpwidth">Digite o segundo valor</label>
+            <input id="n2" type="number" value="@ViewBag.n2">
+        </div>*@
+
+    <div class="text-center">
+        <label for="vpwidth">Resultado: @Model</label>
+
+    </div>
+    <br />
+
+    <div class="button">
+
+        <input type="submit" value="Calcular" />
+
+    </div>
+    <br />
+    <div class="text-center">
+        <p>
+            <a  asp-action="Historico">Acessar Histórico de Contas</a>
+        </p>
+    </div>
+
+    @if (ViewBag.Message != null)
+            {
+                <script type="text/javascript">
+                    window.onload = function () {
+                        alert("@ViewBag.Message");
+                    };
+                </script>
+            }
+
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="text-center">
+
+         <a href="https://curriculo-nataligabriel.web.app/"> <p>Saiba mais sobre Gabriel Natali.</p></a>
+    </div>
